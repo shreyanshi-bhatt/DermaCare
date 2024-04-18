@@ -1,0 +1,31 @@
+//for ui effect ...
+export const SET_ERRORS = "SET_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const LOADING_UI = "LOADING_UI";
+export const STOP_LOADING_UI = "STOP_LOADING_UI";
+export const LOGIN_LOADING = "LOGIN_LOADING";
+export const STOP_LOGIN_LOADING = "STOP_LOGIN_LOADING";
+
+//for doctor ...
+export const DOCTOR_SET_IS_DOCTOR = "DOCTOR_SET_IS_DOCTOR";
+export const DOCTOR_SET_IS_DETAILFILLED = "DOCTOR_SET_IS_DETAILFILLED";
+export const DOCTOR_SET_USER_DETAILS = "DOCTOR_SET_USER_DETAILS";
+export const LOGOUT_DOCTOR = "LOGOUT_DOCTOR";
+
+//for patient ...
+export const PATIENT_SET_IS_DOCTOR = "PATIENT_SET_IS_DOCTOR";
+export const PATIENT_SET_IS_DETAILFILLED = "PATIENT_SET_IS_DETAILFILLED";
+export const PATIENT_SET_USER_DETAILS = "PATIENT_SET_USER_DETAILS";
+export const LOGOUT_PATIENT = "LOGOUT_PATIENT";
+
+//for timeline data ...
+export const PATIENT_UPDATE_TIMELINE_ID = "PATIENT_UPDATE_TIMELINE_ID";
+
+//for update timeline ...
+export const DOCTOR_UPDATE_TIMELINE = "DOCTOR_UPDATE_TIMELINE";
+export const PATIENT_UPDATE_TIMELINE = "PATIENT_UPDATE_TIMELINE";
+
+//user redux
+export const SET_USER_DETAILS = "SET_USER_DETAILS";
+export const SET_USER_IS_DOCTOR = "SET_USER_IS_DOCTOR";
+export const LOGOUT_USER = "LOGOUT_USER";

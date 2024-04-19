@@ -23,7 +23,6 @@ const headerName = [
   "gender",
   "age",
   "phoneNumber",
-  "category",
 ];
 const doctorDetail = {
   name: "Doctor 1",
@@ -111,7 +110,7 @@ export default function PatientCard() {
       <TableContainer>
         <Table variant="simple">
           <TableCaption>
-            List of all patients related with doctor specializaion
+            List of your patients 
           </TableCaption>
           <Thead>
             <Tr>
@@ -143,7 +142,7 @@ export default function PatientCard() {
             </Tr> */}
             {patientsData.map((el, i) => {
               return (
-                <Tr
+                <Tr cursor="pointer"
                   key={i}
                   color={i % 2 === 0 ? " #F5F5F5" : ""}
                   bg={i % 2 === 0 ? "#2977ff" : ""}
@@ -156,7 +155,7 @@ export default function PatientCard() {
                   <Td>{el.gender}</Td>
                   <Td>{el.age}</Td>
                   <Td>{el.phoneNumber}</Td>
-                  <Td>{"--"}</Td>
+                  {/* <Td>{el.category}</Td> */}
                 </Tr>
               );
             })}

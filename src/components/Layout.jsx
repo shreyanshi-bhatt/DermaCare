@@ -65,6 +65,14 @@ const Layout = () => {
                 active={location.pathname === "/patients"}
               />
             </Link>
+            <Link to="/scan">
+              <SidebarItems
+                icon={<FaMagnifyingGlass size={20} />}
+                text={"Scan"}
+                alert={false}
+                active={location.pathname === "/scan"}
+              />
+            </Link>
             <Link to="/settings">
               <SidebarItems
                 icon={<IoSettingsOutline size={20} />}
@@ -109,12 +117,12 @@ const Layout = () => {
                 active={location.pathname === "/patient/timeline"}
               />
             </Link>
-            <Link to="/patient/scan">
+            <Link to="/scan">
               <SidebarItems
                 icon={<FaMagnifyingGlass size={20} />}
-                text={"Skin Scan"}
+                text={"Scan"}
                 alert={false}
-                active={location.pathname === "/patient/scan"}
+                active={location.pathname === "/scan"}
               />
             </Link>
 
@@ -130,7 +138,7 @@ const Layout = () => {
         )}
       </Sidebar>
       <Box display={"flex"} flexDirection={"column"} w="100%">
-        <Header menuData={menuData} />
+        {user?.isDoctor ? <></> : <Header menuData={menuData} />}
         <Box flex="1" p="4">
           {/* Main content goes here */}
           <Outlet />

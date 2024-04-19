@@ -90,7 +90,7 @@ const LoginPage = () => {
           fontFamily=""
           letterSpacing=".5px"
         >
-          MedCare
+          DermaCare
         </Text>
       </Box>
       {variant === "register" ? (

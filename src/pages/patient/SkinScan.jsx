@@ -8,6 +8,7 @@ import {
     Text,
     Image,
   } from "@chakra-ui/react";
+import ImageUpload from '../../components/elements/ImageUpload';
 
 const SkinScan = () => {
     const handleSubmissionQuery = () => {
@@ -20,14 +21,14 @@ const SkinScan = () => {
           <Box p={4} margin="10px" padding="10px" maxWidth="50%">
             <Flex flexDir={"column"}>
               <Heading as="h3" size="lg" m="10px" style={{ textAlign: "center" }}>
-                Image Upload for AI Diagnosis
+                Upload Image for AI Diagnosis
               </Heading>
 
               <Text fontSize="lg" m="10px" alignSelf="center" style={{ textAlign: "center" }}>
-                Upload a clear image of your skin condition here, to get an AI powered diagnosis.
+                Upload a clear image of your skin condition here, to get an AI powered skin diagnosis.
               </Text>
 
-              <Button
+              {/* <Button
                 bg="#2977ff"
                 color="whitesmoke"
                 alignSelf="center"
@@ -37,7 +38,8 @@ const SkinScan = () => {
                 onClick={handleSubmissionQuery}
               >
                 Upload
-              </Button>
+              </Button> */}
+              <ImageUpload />
             </Flex>
           </Box>
         </Flex>

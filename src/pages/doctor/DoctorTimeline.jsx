@@ -152,7 +152,7 @@ const ChatBotDrawer = ({
           <Box ml={1}>
             <FormControl display="flex" alignItems="center">
               <FormLabel htmlFor="isEnable-alerts" mb="0">
-                Share addition data
+                Share additional data
               </FormLabel>
               <Switch
                 id="isEnable-alerts"
@@ -264,7 +264,7 @@ const TimeLineDoctor = () => {
   }, []);
 
   const handleVarifyEdit = async (index, id) => {
-    console.log("varify nd edit", index, id);
+    console.log("Verify nd edit", index, id);
     const updatedTimeline = [...timeLine];
     const currentItem = updatedTimeline[index];
 
@@ -433,6 +433,7 @@ const TimeLineDoctor = () => {
             borderRadius="full"
             boxSize="60px"
             alt="Bot"
+            cursor="pointer"
             src="https://media.istockphoto.com/id/1445730887/vector/chatbot-head-in-speech-bubble-vector-icon.jpg?s=612x612&w=0&k=20&c=0NVG2sbSxNNo3mGfCCmGUSq_GC1UTvPyeO1OnNrY13U="
           />
           {/* </Button> */}
@@ -479,21 +480,21 @@ const TimeLineDoctor = () => {
                       >
                         {item.date.split("T")[0]}
                       </Text>
-                      <Box>
-                        <Text
+                      {/* <Box> */}
+                        {/* <Text
                           fontSize={"xl"}
                           fontWeight={"bold"}
                           letterSpacing={0.5}
                           textColor={"gray.600"}
                         >
                           Category :
-                        </Text>
-                      </Box>
+                        </Text> */}
+                      {/* </Box>
                       <Box ml={2} mb={2}>
                         <Text fontSize={"lg"} fontWeight={"semibold"}>
                           {item.category}
                         </Text>
-                      </Box>
+                      </Box> */}
                       <Box>
                         <Text
                           fontSize={"xl"}
@@ -672,7 +673,7 @@ const TimeLineDoctor = () => {
                         variant={item.status ? "solid" : "subtle"}
                         colorScheme={item.status ? "green" : "red"}
                       >
-                        {item.status ? "Varified" : "Pending"}
+                        {item.status ? "Verified" : "Pending"}
                       </Badge>
                     </Box>
                   </Box>
@@ -697,8 +698,8 @@ const TimeLineDoctor = () => {
                       }}
                     >
                       {isVarified[i]
-                        ? "Edit your prescriptions"
-                        : "Add Your prescriptions"}
+                        ? "Edit your Prescriptions"
+                        : "Add Your Prescriptions"}
                     </Box>
                     <Collapse in={openIndex === i} animateOpacity>
                       <Box
@@ -718,12 +719,12 @@ const TimeLineDoctor = () => {
                               fontWeight={"bold"}
                               textColor={"gray.600"}
                             >
-                              Precscription
+                              Prescription
                             </FormLabel>
                             <Textarea
                               borderWidth={"2px"}
                               minH={"150px"}
-                              placeholder="Enter precscription here"
+                              placeholder="Enter prescription here"
                               value={prescription}
                               resize={"vertical"}
                               onChange={(e) => setPrescription(e.target.value)}
@@ -736,7 +737,7 @@ const TimeLineDoctor = () => {
                               fontWeight={"bold"}
                               textColor={"gray.600"}
                             >
-                              Blood pressur
+                              Blood pressure
                             </FormLabel>
                             <Input
                               borderWidth={"2px"}
@@ -818,7 +819,7 @@ const TimeLineDoctor = () => {
                             colorScheme="blue"
                             onClick={() => handleVarifyEdit(i, item._id)}
                           >
-                            {item.status ? "Edit" : "Varify"}
+                            {item.status ? "Edit" : "Verify"}
                           </Button>
                         </Box>
                       </Box>

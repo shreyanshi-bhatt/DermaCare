@@ -45,7 +45,7 @@ const commonRoutes = [
     element: <TimeLineDoctor />,
   },
   {
-    path: "/patient/scan",
+    path: "/scan",
     element: <Scan />,
   },
 ];

@@ -18,8 +18,10 @@ import { CiSearch } from "react-icons/ci";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { useSelector } from "react-redux";
+import SearchBar from "./SearchBar";
 
 const Header = ({ menuData }) => {
+  const user = useSelector((state) => state.user.userDetail);
   return (
     <Box as="header">
       <Box
@@ -31,7 +33,7 @@ const Header = ({ menuData }) => {
         flexDirection={"row"}
         justifyContent={"space-between"}
       >
-        <Box width={"35%"}>
+        {/* <Box width={"35%"}>
           <InputGroup
             display={"flex"}
             alignItems={"center"}
@@ -52,7 +54,8 @@ const Header = ({ menuData }) => {
               opacity={0.75}
             />
           </InputGroup>
-        </Box>
+        </Box> */}
+        <SearchBar />
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -65,7 +68,7 @@ const Header = ({ menuData }) => {
               opacity: 0.75,
             }}
           >
-            <AvatarGroup>
+            {/* <AvatarGroup>
               <Avatar
                 size={"sm"}
                 bg={"white"}
@@ -73,7 +76,7 @@ const Header = ({ menuData }) => {
               >
                 <AvatarBadge bg="blue.500" boxSize="1em" placement="top-end" />
               </Avatar>
-            </AvatarGroup>
+            </AvatarGroup> */}
           </Box>
           <Box
             display={"flex"}
@@ -94,7 +97,7 @@ const Header = ({ menuData }) => {
                 >
                   <Text color={"black"} fontWeight={"semibold"} fontSize={"md"}>
                     {/* {user.isDoctor ? `Dr ${user.name}` : `${user.name}`} */}
-                    Hello User!
+                    Hello {user?.name || 'User'}!
                   </Text>
                   <Box>
                     <TiArrowSortedDown color="black" />

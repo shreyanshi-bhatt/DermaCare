@@ -1,10 +1,33 @@
-import { Box, Divider } from "@chakra-ui/react";
+import { Box, Center, Divider, Text, useToast } from "@chakra-ui/react";
 import Header from "../../components/elements/Header";
 import { Tabs, TabList, Tab, TabPanel, TabPanels } from "@chakra-ui/react";
 import AllPatient from "./AllPAtient";
 import AllDoctor from "./AllDoctor";
+import { LuLogOut } from "react-icons/lu";
+import { LogOutUser } from "../../redux/actions/userActions";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+
 
 const AdminPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const toast = useToast(); // Get the toast function
+
+  const handleLogout = () => {
+    toast({
+      title: "logged out.",
+      description: "You are logged out successfully.",
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+    console.log("logout");
+    dispatch(LogOutUser());
+    navigate("/");
+  };
   const menuData = [
     {
       label: "Logout",
@@ -13,17 +36,23 @@ const AdminPage = () => {
   ];
   return (
     <Box>
-      <Box mb={8}>
+    <Box  mt="3" mb="3">
+      <Text textAlign="center" color={"black"} fontSize={"18"} fontWeight={"bold"}>
+          Logout <center><LuLogOut cursor="pointer"  onClick={handleLogout} size={20} /></center>
+      </Text>
+    </Box>
+            
+      {/* <Box mb={8}>
         <Header menuData={menuData} />
-      </Box>
-      <Divider />
+      </Box> */}
+      {/* <Divider /> */}
       <Box>
         <Box
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"center"}
           alignItems={"center"}
-          my={8}
+          my={7}
           mx={8}
         >
           <Box width={"100%"}>

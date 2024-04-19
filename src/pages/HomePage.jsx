@@ -30,11 +30,11 @@ function HomePage() {
           <div className="container">
             <div className="navbar-content d-flex justify-content-between align-items-center">
               <div className="brand-and-toggler d-flex align-items-center justify-content-between">
-                <a href="#" className="navbar-brand d-flex align-items-center">
+                <a href="/home" className="navbar-brand d-flex align-items-center">
                   <span className="brand-shape d-inline-block text-white">
-                    S
+                    DC
                   </span>
-                  <span className="brand-text fw-7">Skin Scan</span>
+                  <span className="brand-text fw-7">DermaCare</span>
                 </a>
                 <button type="button" className="d-none navbar-show-btn">
                   <i className="fas fa-bars" />
@@ -346,16 +346,16 @@ function HomePage() {
               <div className="footer-item">
                 <a href="#" className="navbar-brand d-flex align-items-center">
                   <span className="brand-shape d-inline-block text-white">
-                    M
+                    DC
                   </span>
-                  <span className="brand-text fw-7">MedCare</span>
+                  <span className="brand-text fw-7">DermaCare</span>
                 </a>
                 <p className="text-white">
-                  MedCare provides progressive, and affordable healthcare,
+                  DermaCare provides progressive, and affordable healthcare,
                   accessible on mobile and online for everyone
                 </p>
                 <p className="text-white copyright-text">
-                  © MedCare PTY LTD 2023. All rights reserved.
+                  © DermaCare PVT LTD 2024. All rights reserved.
                 </p>
               </div>
               <div className="footer-item">

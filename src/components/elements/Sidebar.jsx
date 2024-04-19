@@ -67,7 +67,7 @@ export default function Sidebar({ children }) {
             transitionDuration={"300ms"}
             transitionDelay={"0.1"}
           >
-            SkinScan
+            DermaCare
           </Text>
           <Box
             cursor={"pointer"}

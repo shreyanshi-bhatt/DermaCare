@@ -12,6 +12,7 @@ import {
 
 const ImageUpload = () => {
     const [image, setImage] = useState(null);
+    const [prediction, setPrediction] = useState(""); 
 
     function handleImage(e) {
         console.log(e.target.files);
@@ -30,6 +31,7 @@ const ImageUpload = () => {
         axios.post('http://127.0.0.1:8000/predict', formData)
             .then((res) => {
                 console.log(res);
+                setPrediction(res.data.prediction);
             })
             .catch((error) => {
                 console.error('Error uploading image:', error);
@@ -50,6 +52,12 @@ const ImageUpload = () => {
               >
                 Upload
               </Button>
+              <Text fontSize="md" m="10px" alignSelf="center" style={{ textAlign: "center" }}>
+              (Please remember that every AI model has its own limitations and less than 100% accuracy.)
+              </Text>
+              <Text fontSize="lg" m="10px" alignSelf="center" style={{ textAlign: "center" }}>
+              {prediction ? `This might be your skin disease: ${prediction}` : ""}
+              </Text>
         </div>
     );
 }

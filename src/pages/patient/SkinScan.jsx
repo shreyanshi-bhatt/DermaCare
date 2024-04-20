@@ -28,17 +28,7 @@ const SkinScan = () => {
                 Upload a clear image of your skin condition here, to get an AI powered skin diagnosis.
               </Text>
 
-              {/* <Button
-                bg="#2977ff"
-                color="whitesmoke"
-                alignSelf="center"
-                width="fit-content"
-                marginTop="5"
-                m="10px"
-                onClick={handleSubmissionQuery}
-              >
-                Upload
-              </Button> */}
+              
               <ImageUpload />
             </Flex>
           </Box>

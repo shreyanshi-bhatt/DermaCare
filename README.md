@@ -1,6 +1,6 @@
 # DermaCare (Previously known as SkinScan) Frontend
  This is the frontend repository of my Design Engineering Project.
- Team Members: Het Varasada & Vaibahv Sanepara.
+ (My Team Members: Het Varasada & Vaibhav Sanepara.)
 
 # Project Description
 

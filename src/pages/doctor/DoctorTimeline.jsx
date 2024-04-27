@@ -253,11 +253,13 @@ const TimeLineDoctor = () => {
         });
         setEmail(res.data.patient.email);
         setPatient(res.data.patient);
-        setTimeLine(res.data.patient.Timeline);
-        // dispatch({
-        //   type: PATIENT_UPDATE_TIMELINE,
-        //   payload: res.data.patient.Timeline,
-        // });
+
+        // Filter timeline entries matching the doctor's name
+        const filteredTimeline = res.data.patient.Timeline.filter((entry) =>
+          entry.category.includes(`Dr ${user.name}`)
+        );
+
+        setTimeLine(filteredTimeline);
         console.log(res.data.patient);
       } catch (error) {
         console.log(error);
@@ -267,46 +269,33 @@ const TimeLineDoctor = () => {
   }, []);
 
   const handleVarifyEdit = async (index, id) => {
-    console.log("Verify nd edit", index, id);
-    const updatedTimeline = [...timeLine];
-    const currentItem = updatedTimeline[index];
+    const currentItem = timeLine[index];
 
     try {
-      if (!currentItem.prescription && !currentItem.result) {
-        updatedTimeline[index] = {
-          ...currentItem,
-          prescription,
-          result,
-          bloodPressure,
-          bodyTemperature,
-          respiratoryRate,
-          heartRate,
-          status: true,
-        };
-      } else {
-        updatedTimeline[index] = {
-          ...currentItem,
-          prescription: prescription || currentItem.prescription,
-          result: result || currentItem.result,
-          bloodPressure: bloodPressure || currentItem.bloodPressure,
-          bodyTemperature: bodyTemperature || currentItem.bodyTemperature,
-          respiratoryRate: respiratoryRate || currentItem.respiratoryRate,
-          heartRate: heartRate || currentItem.heartRate,
-          status: true,
-        };
-      }
-      console.log("updated", updatedTimeline[index]);
+      const updatedItem = {
+        ...currentItem,
+        prescription: prescription || currentItem.prescription,
+        result: result || currentItem.result,
+        bloodPressure: bloodPressure || currentItem.bloodPressure,
+        bodyTemperature: bodyTemperature || currentItem.bodyTemperature,
+        respiratoryRate: respiratoryRate || currentItem.respiratoryRate,
+        heartRate: heartRate || currentItem.heartRate,
+        status: true,
+      };
+
       const res = await axios.post(`${SERVER_API}/consult/update`, {
         email,
         checkPointId: id,
-        prescription: updatedTimeline[index].prescription,
-        result: updatedTimeline[index].result,
-        bloodPressure: updatedTimeline[index].bloodPressure,
-        bodyTemperature: updatedTimeline[index].bodyTemperature,
-        respiratoryRate: updatedTimeline[index].respiratoryRate,
-        heartRate: updatedTimeline[index].heartRate,
-        status: Boolean(updatedTimeline[index].status),
+        ...updatedItem,
       });
+
+      // Update the timeline state with the response data
+      setTimeLine((prevTimeline) =>
+        prevTimeline.map((item, idx) =>
+          idx === index ? res.data.data.Timeline : item
+        )
+      );
+
       toast({
         title: "Updated successfully",
         description: "You have successfully edited patient timeline",
@@ -315,17 +304,12 @@ const TimeLineDoctor = () => {
         isClosable: true,
         position: "top",
       });
-      console.log("res", res.data.data.Timeline);
-      setTimeLine(res.data.data.Timeline);
-      handleCollapseToggle(index);
-      // dispatch({
-      //   type: PATIENT_UPDATE_TIMELINE,
-      //   payload: res.data.data.Timeline,
-      // });
+
+      handleCollapseToggle(index); // Close the edit form
     } catch (error) {
       toast({
         title: "Something went wrong",
-        description: "Check deatial if it failed and try again late.",
+        description: "Check details if it failed and try again later.",
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -484,7 +468,7 @@ const TimeLineDoctor = () => {
                         {item.date.split("T")[0]}
                       </Text>
                       {/* <Box> */}
-                        {/* <Text
+                      {/* <Text
                           fontSize={"xl"}
                           fontWeight={"bold"}
                           letterSpacing={0.5}

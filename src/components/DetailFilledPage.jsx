@@ -103,7 +103,7 @@ const DetaileFilledPage = () => {
             textAlign="center"
             marginBottom={14}
           >
-            PMS - System
+            DermaCare - Doctor Portal
           </Text>
           <Text
             fontSize="5xl"
@@ -111,7 +111,7 @@ const DetaileFilledPage = () => {
             color="white"
             textAlign="center"
           >
-            Hello ! Dr John Hope you are doing great
+            Hello Doc! Hope you are doing great.
           </Text>
         </Box>
       </Box>
@@ -189,7 +189,7 @@ const DetaileFilledPage = () => {
             />
           </FormControl>
           <FormControl id="key">
-            <FormLabel>Specialist of</FormLabel>
+            <FormLabel>Select your name from the list</FormLabel>
             {/* <Input
               type="text"
               placeholder="You are specialist of ..."
@@ -219,7 +219,7 @@ const DetaileFilledPage = () => {
                   alignItems={"center"}
                 >
                   <Text>
-                    {selectedCategory ? selectedCategory : "Select a category"}
+                    {selectedCategory ? selectedCategory : "Select your name"}
                   </Text>
                   <IoMdArrowDropdown />
                 </Box>
@@ -246,7 +246,7 @@ const DetaileFilledPage = () => {
               >
                 <MenuOptionGroup
                   defaultValue="asc"
-                  title="Doctors category"
+                  title="Doctors list"
                   type="radio"
                   value={selectedCategory}
                   onChange={handleCategoryChange}

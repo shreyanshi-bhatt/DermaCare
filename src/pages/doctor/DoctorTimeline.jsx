@@ -229,6 +229,9 @@ const TimeLineDoctor = () => {
   const [timeLine, setTimeLine] = useState([]);
 
   const timeline123 = useSelector((state) => state.patient.Timeline);
+  // const speciality = useSelector((state) => state.doctor.speciality);
+
+  // console.log("Speciality: ", speciality);
 
   console.log("redux", timeline123);
   const [email, setEmail] = useState("");

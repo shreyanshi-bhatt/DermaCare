@@ -49,7 +49,7 @@ export const AuthLoginPost =
       }
       console.log(res);
     } catch (error) {
-      dispatch(logo);
+      // dispatch(logo);
       dispatch({ type: STOP_LOGIN_LOADING });
       console.log(error);
       toast({

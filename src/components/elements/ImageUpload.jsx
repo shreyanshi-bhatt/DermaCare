@@ -1,57 +1,102 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
-    Box,
-    Button,
-    Input,
-    Flex,
-    Heading,
-    Text,
-    Image,
-  } from "@chakra-ui/react";
+  Box,
+  Button,
+  Input,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  Divider,
+} from "@chakra-ui/react";
 
-const ImageUpload = () => {
-    const [image, setImage] = useState(null);
+import { IoIosCloseCircle } from "react-icons/io";
+const ImageUpload = ({ handleAPI }) => {
+  const [image, setImage] = useState(null);
 
-    function handleImage(e) {
-        console.log(e.target.files);
-        setImage(e.target.files[0]);
-    }
+  useEffect(() => {
+    console.log(image, "img");
+  }, [image]);
 
-    function handleAPI() {
-        if (!image) {
-            console.log("No image selected!");
-            return;
-        }
-        
-        const formData = new FormData();
-        formData.append('user_image', image);
-        
-        axios.post('http://127.0.0.1:8000/predict', formData)
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((error) => {
-                console.error('Error uploading image:', error);
-            });
-    }
+  function handleImage(e) {
+    console.log(e.target.files);
+    setImage(e.target.files[0]);
+  }
 
-    return (
-        <div style={{ margin: '0 auto' }}>
-            <input type="file" name="user_image" onChange={handleImage} />
-            <Button
-                bg="#2977ff"
-                color="whitesmoke"
-                alignSelf="center"
-                width="fit-content"
-                marginTop="5"
-                m="10px"
-                onClick={handleAPI}
-              >
-                Upload
-              </Button>
-        </div>
-    );
-}
+  // function handleAPI() {
+  //   if (!image) {
+  //     console.log("No image selected!");
+  //     return;
+  //   }
+
+  //   const formData = new FormData();
+  //   formData.append("file", image);
+
+  //   axios
+  //     .post("http://192.168.192.105:3000/predict", formData)
+  //     .then((res) => {
+  //       console.log(res);
+  //       setModalResponse(res);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error uploading image:", error);
+  //     });
+  // }
+
+  return (
+    <Box style={{ margin: "0 auto" }}>
+      <label>
+        <Box display={"flex"} flexDirection={"row"} gap={5}>
+          <Box
+            display={"flex"}
+            margin={"0"}
+            padding={3}
+            height={10}
+            width={"auto"}
+            marginTop={3}
+            flexDirection={"row"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            backgroundColor={"#f0fbff"}
+            rounded={"md"}
+            fontWeight={"bolder"}
+            gap={2}
+          >
+            <Text cursor={!image ? "pointer" : ""} fontWeight={"500"}>
+              {image ? image.name : "Select Image"}
+            </Text>
+            {image && (
+              <Box onClick={() => setImage(null)} cursor={"pointer"}>
+                <IoIosCloseCircle size={22} color="red" />
+              </Box>
+            )}
+          </Box>
+
+          <input
+            type="file"
+            disabled={image}
+            name="user_image"
+            onChange={handleImage}
+            style={{
+              display: "none",
+            }}
+          />
+          <Button
+            bg="#2977ff"
+            color="whitesmoke"
+            alignSelf="center"
+            width="fit-content"
+            marginTop="5"
+            m="10px"
+            onClick={() => handleAPI(image)}
+          >
+            Upload
+          </Button>
+        </Box>
+      </label>
+    </Box>
+  );
+};
 
 export default ImageUpload;

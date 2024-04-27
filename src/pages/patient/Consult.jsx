@@ -63,7 +63,7 @@ const Consult = () => {
         position: "top",
       });
       console.log(res);
-      navigate("/patient/timeline");
+      navigate("/patient/timeline/upload-image");
     } catch (error) {
       toast({
         title: "Something went wrong",

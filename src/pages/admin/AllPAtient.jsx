@@ -41,7 +41,7 @@ const AllPatient = () => {
 
   return (
     <Box p={12}>
-      <Box display={"flex"} flexDirection={"column"}>
+      <Box display={"flex"} flexDirection={"column"} overflow={"auto"}>
         {allPatients.map((item, i) => {
           return (
             <Fragment key={i}>

@@ -91,7 +91,7 @@ const AllDoctors = () => {
         onOpen={onOpen}
         handleAddDoctor={handleAddDoctor}
       />
-      <Box p={12}>
+      <Box p={12} overflow={"auto"}>
         <Box display={"flex"} flexDirection={"column"}>
           {AllDoctors.map((item, i) => {
             return (

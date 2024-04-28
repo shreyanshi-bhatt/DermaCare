@@ -1,0 +1,13 @@
+category is there in:
+
+Consult.jsx +
+PatientTimeline.jsx +
+categoryData.js +
+DoctorTimeline.jsx +
+PatientCard.jsx + specialist?
+DoctorDetail.jsx +
+DetailFilledPage.jsx +
+
+
+This is the file that needs to be corrected: DoctorTimeline.jsx
+timeline array ne aakho display karva ni bajay aapde ene j a doctor ni category wadu hoy a j timeline display karvani che 

@@ -86,7 +86,7 @@ function UpdateModal({
               onChange={(e) => setEducation(e.target.value)}
             />
             <FormLabel>
-              <Text>Speacialist :</Text>
+              <Text>Label :</Text>
             </FormLabel>
             <Input
               mb={4}
@@ -220,7 +220,7 @@ const DoctorDetail = ({ doctor }) => {
             <Divider />
             <Box display="flex" paddingY="2">
               <Text mb="2" width="fit-content" fontWeight="bold">
-                Specilist<span>&nbsp;</span> : <span>&nbsp;</span>{" "}
+                Label<span>&nbsp;</span> : <span>&nbsp;</span>{" "}
               </Text>
               &nbsp;
               <Text width="fit-content" color="gray.600" fontWeight={"550"}>

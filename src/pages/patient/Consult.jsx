@@ -63,7 +63,7 @@ const Consult = () => {
         position: "top",
       });
       console.log(res);
-      navigate("/patient/timeline/upload-image");
+      navigate("/patient/timeline");
     } catch (error) {
       toast({
         title: "Something went wrong",
@@ -167,7 +167,7 @@ const Consult = () => {
               {doctor_categories.map((item, i) => {
                 return (
                   <MenuItemOption value={item.value} key={i}>
-                    {item.label}
+                    {item.label} - Email: {item.email}
                   </MenuItemOption>
                 );
               })}
@@ -195,7 +195,7 @@ const Consult = () => {
             textAlign={"Center"}
             textColor={"gray.600"}
           >
-            Form for consultancy
+            Form for Consultancy
           </Text>
           <FormControl id="symptoms" my={5}>
             <FormLabel
@@ -248,6 +248,11 @@ const Consult = () => {
               onChange={(e) => setMedication(e.target.value)}
             />
           </FormControl>
+          <Box>
+        <Text fontSize={"3xl"} color={"gray.600"} fontWeight={"bold"}>
+          Note: Send the images of your affected skin area to the doctor via email along with the following details: Your name, age, email, & phone number.
+        </Text>
+      </Box>
           <Box display={"flex"} justifyContent={"flex-end"} width={"100%"}>
             <Button
               bg="#2977ff"

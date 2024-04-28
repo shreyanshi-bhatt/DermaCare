@@ -36,6 +36,7 @@ const SkinScan = () => {
 
     console.log(formData, "fd");
 
+    // http://192.168.192.105:3000/predict <---- original 
     axios
       .post("http://192.168.192.105:3000/predict", formData)
       .then((res) => {
@@ -115,7 +116,7 @@ const SkinScan = () => {
                   {" "}
                   {modelResponse?.data?.confidence.slice(0, 5) + "%"}{" "}
                 </Box>
-                accuracy you should consult doctor for further evalution
+                accuracy you should consult the doctor for further evaluation
               </Text>
             </Box>
           </>
@@ -135,7 +136,7 @@ const SkinScan = () => {
                 textAlign={"center"}
                 fontWeight={"400"}
               >
-                Please upload a clear or valid image of skin diseases
+                Please upload a clear and valid image of your skin disease
               </Text>
             </Box>
           </>

@@ -14,7 +14,6 @@ import Scan from "./pages/patient/SkinScan";
 import PatientCard from "./components/patientCard";
 import AdminPage from "./pages/admin/AdminPage";
 import HomePage from "./pages/HomePage";
-import UploadImageReport from "./pages/patient/UploadImageReport";
 
 const commonRoutes = [
   {
@@ -40,10 +39,6 @@ const commonRoutes = [
   {
     path: "/patient/timeline",
     element: <TimelinePatient />,
-  },
-  {
-    path: "/patient/timeline/upload-image",
-    element: <UploadImageReport />,
   },
   {
     path: "/doctor/timeline/:id",

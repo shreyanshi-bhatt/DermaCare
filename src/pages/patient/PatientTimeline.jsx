@@ -359,7 +359,7 @@ const TimelinePatient = () => {
                     variant={item.status ? "solid" : "subtle"}
                     colorScheme={item.status ? "green" : "red"}
                   >
-                    {item.status ? "varified" : "pending"}
+                    {item.status ? "verified" : "pending"}
                   </Badge>
                   <Box
                     as="button"

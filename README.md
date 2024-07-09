@@ -1,5 +1,6 @@
-# DermaCare (Previously known as SkinScan) Frontend
-# DermaCare DL Model link: https://github.com/vaibhav0712/dermacare_python_server
+# DermaCare Frontend Repo
+# DermaCare DL Model link: 
+ https://github.com/vaibhav0712/dermacare_python_server
  This is the frontend repository of my Design Engineering Project.
  (My Team Members: Het Varasada & Vaibhav Sanepara.)
  Note: We have applied Vertical Slicing to divide the roles and responsibilities.
